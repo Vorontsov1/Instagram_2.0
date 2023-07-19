@@ -15,12 +15,17 @@ const Comment = ({comment}: CommentProps) => {
       const [isLiked, setIsLiked] = useState(false);
       const [isComment, setIsComment] = useState(false);
      
+  const toggleComment = () => {
+    setIsComment(v => !v); //make it to true
+  };
+  
   return (
     <View style={styles.comment}>
       <Text style={styles.commetnText}>
-        <Text style={styles.boldText}>{comment.user.username}</Text> {comment.comment}
+        <Text style={styles.boldText}>{comment.user.username}</Text>{' '}
+        {comment.comment}
       </Text>
-      <TouchableOpacity onPress={() => setIsComment(!isComment)}>
+      <TouchableOpacity onPress={toggleComment}>
         {isComment ? (
           <Liked width={15} height={15} style={styles.icon} />
         ) : (

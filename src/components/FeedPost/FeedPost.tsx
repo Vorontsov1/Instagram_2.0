@@ -6,6 +6,7 @@ import {
   Image,
   SafeAreaView,
   TouchableOpacity,
+  Pressable,
 } from 'react-native';
 import colors from '../../theme/colors';
 import font from '../../theme/fonts';
@@ -17,7 +18,8 @@ import Send from '../../assets/svg/send-1-svgrepo-com.svg';
 import Bookmark from '../../assets/svg/bookmarks-svgrepo-com.svg';
 import styles from './styles';
 import Comment from '../Comment';
-import {IPost} from '../../types/models.ts';
+import { IPost } from '../../types/models.ts';
+import DoublePressable from '../DoublePressable';
 
 interface FeedPostProps { 
   post: IPost;
@@ -26,6 +28,16 @@ interface FeedPostProps {
 
 const FeedPost = ({post}: FeedPostProps) => {
   const [isLiked, setIsLiked] = useState(false);
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false); 
+
+  const toggleDescriptionExpanded = () => {
+    setIsDescriptionExpanded(v => !v); //make it to true
+  };
+
+  const toggleLike = () => { 
+  setIsLiked(v => !v); //make it to true
+  };
+
 
   return (
     <SafeAreaView style={styles.post}>
@@ -47,24 +59,26 @@ const FeedPost = ({post}: FeedPostProps) => {
       </View>
 
       {/* Content */}
-      <Image
-        source={{
-          uri: post.image,
-        }}
-        style={styles.image}
-      />
+      <DoublePressable onDoublePress={toggleLike}>
+        <Image
+          source={{
+            uri: post.image,
+          }}
+          style={styles.image}
+        />
+      </DoublePressable>
 
       {/* Footer */}
       <View style={styles.footer}>
         <View style={styles.svgContainer}>
           <View style={styles.threeIcons}>
-            <TouchableOpacity onPress={() => setIsLiked(!isLiked)}>
+            <Pressable onPress={toggleLike}>
               {isLiked ? (
                 <Liked width={30} height={30} style={styles.icon} />
               ) : (
                 <Like width={30} height={30} style={styles.icon} />
               )}
-            </TouchableOpacity>
+            </Pressable>
             <TouchableOpacity>
               <ChatIcon width={30} height={30} style={styles.icon} />
             </TouchableOpacity>
@@ -84,9 +98,12 @@ const FeedPost = ({post}: FeedPostProps) => {
         </Text>
 
         {/* Post description */}
-        <Text style={styles.text}>
+        <Text style={styles.text} numberOfLines={isDescriptionExpanded ? 0 : 3}>
           <Text style={styles.boldText}>{post.user.username}</Text>{' '}
           {post.description}
+        </Text>
+        <Text style={styles.allComments} onPress={toggleDescriptionExpanded}>
+          {isDescriptionExpanded ? 'less' : 'more'}
         </Text>
 
         {/* Comments */}
