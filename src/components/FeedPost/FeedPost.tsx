@@ -21,39 +21,47 @@ import Comment from '../Comment';
 import { IPost } from '../../types/models.ts';
 import DoublePressable from '../DoublePressable';
 import Carousel from '../Carousel';
+import VideoPlayer from '../VideoPlayer';
 
 
 
 interface FeedPostProps { 
   post: IPost;
+  isVisible: boolean;
 }
 
 
-const FeedPost = ({post}: FeedPostProps) => {
+const FeedPost = ({post, isVisible   }: FeedPostProps) => {
   const [isLiked, setIsLiked] = useState(false);
-  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false); 
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
 
   const toggleDescriptionExpanded = () => {
     setIsDescriptionExpanded(v => !v); //make it to true
   };
 
-  const toggleLike = () => { 
-  setIsLiked(v => !v); //make it to true
+  const toggleLike = () => {
+    setIsLiked(v => !v); //make it to true
   };
 
-
   let content = null;
-  if (post.image) { 
-    content = (<Image
-      source={ {
-        uri: post.image,
-      } }
-      style={ styles.image }
-    />);
+  if (post.image) {
+    content = (
+      <Image
+        source={{
+          uri: post.image,
+        }}
+        style={styles.image}
+      />
+    );
   } else if (post.images) {
-    content = (<Carousel images={post.images} onDoublePress={toggleLike} />)
+    content = <Carousel images={post.images} onDoublePress={toggleLike} />;
+  } else if (post.video) {
+    content = (
+      <DoublePressable onDoublePress={toggleLike}>
+        <VideoPlayer uri={post.video} paused={!isVisible} />
+      </DoublePressable>
+    );
   }
-
 
   return (
     <SafeAreaView style={styles.post}>
@@ -75,9 +83,7 @@ const FeedPost = ({post}: FeedPostProps) => {
       </View>
 
       {/* Content */}
-      <DoublePressable onDoublePress={toggleLike}>
-       {content}
-      </DoublePressable>
+      <DoublePressable onDoublePress={toggleLike}>{content}</DoublePressable>
 
       {/* Footer */}
       <View style={styles.footer}>
