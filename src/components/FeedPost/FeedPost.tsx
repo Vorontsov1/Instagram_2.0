@@ -65,8 +65,12 @@ const FeedPost = ({post}: FeedPostProps) => {
                 <Like width={30} height={30} style={styles.icon} />
               )}
             </TouchableOpacity>
-            <ChatIcon width={30} height={30} style={styles.icon} />
-            <Send width={30} height={30} style={styles.icon} />
+            <TouchableOpacity>
+              <ChatIcon width={30} height={30} style={styles.icon} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Send width={30} height={30} style={styles.icon} />
+            </TouchableOpacity>
           </View>
           <TouchableOpacity style={{marginLeft: 'auto'}}>
             <Bookmark width={30} height={30} />

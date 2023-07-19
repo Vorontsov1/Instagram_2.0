@@ -1,0 +1,165 @@
+[
+  {
+    "id": "video1",
+    "createdAt": "19 December 2021",
+    "video": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+
+    "description": "Comedian and content creator, sharing my daily adventures and making you laugh along the way,Comedian and content creator, sharing my daily adventures and making you laugh along the way",
+    "user": {
+      "id": "u1",
+      "image": "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "username": "Robert Smith"
+    },
+    "nofComments": 11,
+    "nofLikes": 34,
+    "comments": [
+      {
+        "id": "1",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H,",
+        "user": {
+          "id": "u1",
+          "username": "laurapalmer"
+        }
+      },
+      {
+        "id": "2",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
+        "user": {
+          "id": "u1",
+          "username": "vadimnotjustdev"
+        }
+      }
+    ]
+  },
+  {
+    "id": "1",
+    "createdAt": "19 December 2021",
+    "images": [
+      "https://images.pexels.com/photos/207247/pexels-photo-207247.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+       "https://images.pexels.com/photos/935756/pexels-photo-935756.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+       "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+       "https://images.pexels.com/photos/821742/pexels-photo-821742.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+    ],
+    "description": "Comedian and content creator, sharing my daily adventures and making you laugh along the way,Comedian and content creator, sharing my daily adventures and making you laugh along the way",
+    "user": {
+      "id": "u1",
+      "image": "https://images.pexels.com/photos/1758845/pexels-photo-1758845.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "username": "Cathy Brown"
+    },
+    "nofComments": 11,
+    "nofLikes": 34,
+    "comments": [
+      {
+        "id": "1",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H,",
+        "user": {
+          "id": "u1",
+          "username": "laurapalmer"
+        }
+      },
+      {
+        "id": "2",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
+        "user": {
+          "id": "u1",
+          "username": "vadimnotjustdev"
+        }
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "createdAt": "19 December 2021",
+    "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+
+    "username": "laurapalmer",
+    "description": "Lifestyle and comedy vlogger, sharing the lighter side of life through fun videos and challenges,Comedian and content creator, sharing my daily adventures and making you laugh along the way",
+    "user": {
+      "id": "u1",
+      "image": "https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7bb187dd27789876f477e4af6b309dcd&w=1000&q=80",
+      "username": "Cathy Brown"
+    },
+    "nofComments": 11,
+    "nofLikes": 34,
+    "comments": [
+      {
+        "id": "1",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
+        "user": {
+          "id": "u1",
+          "username": "alice_smith"
+        }
+      },
+      {
+        "id": "2",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
+        "user": {
+          "id": "u1",
+          "username": "isla_adams"
+        }
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "createdAt": "19 December 2021",
+    "image": "https://images.pexels.com/photos/207247/pexels-photo-207247.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "description": "Your go-to guy for the funniest reactions, commentary, and hilarious skits, Comedian and content creator, sharing my daily adventures and making you laugh along the way",
+    "user": {
+      "id": "u1",
+      "image": "https://images.pexels.com/photos/3808103/pexels-photo-3808103.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "username": "Bob Johnson"
+    },
+    "nofComments": 11,
+    "nofLikes": 34,
+    "comments": [
+      {
+        "id": "1",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
+        "user": {
+          "id": "u1",
+          "username": "alice_smith"
+        }
+      },
+      {
+        "id": "2",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
+        "user": {
+          "id": "u1",
+          "username": "cathy_brown"
+        }
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "createdAt": "19 December 2021",
+    "image": "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "description": "Stand-up comedian and humor enthusiast, creating content that will leave you in stitches, Comedian and content creator, sharing my daily adventures and making you laugh along the way",
+    "user": {
+      "id": "u1",
+      "image": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "username": "Eva Green"
+    },
+    "nofComments": 11,
+    "nofLikes": 34,
+    "comments": [
+      {
+        "id": "1",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
+        "user": {
+          "id": "u1",
+          "username": "grace_lee"
+        }
+      },
+      {
+        "id": "2",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. H",
+        "user": {
+          "id": "u1",
+          "username": "harry_baker"
+        }
+      }
+    ]
+  }
+]
