@@ -20,6 +20,9 @@ import styles from './styles';
 import Comment from '../Comment';
 import { IPost } from '../../types/models.ts';
 import DoublePressable from '../DoublePressable';
+import Carousel from '../Carousel';
+
+
 
 interface FeedPostProps { 
   post: IPost;
@@ -37,6 +40,19 @@ const FeedPost = ({post}: FeedPostProps) => {
   const toggleLike = () => { 
   setIsLiked(v => !v); //make it to true
   };
+
+
+  let content = null;
+  if (post.image) { 
+    content = (<Image
+      source={ {
+        uri: post.image,
+      } }
+      style={ styles.image }
+    />);
+  } else if (post.images) {
+    content = (<Carousel images={post.images} onDoublePress={toggleLike} />)
+  }
 
 
   return (
@@ -60,12 +76,7 @@ const FeedPost = ({post}: FeedPostProps) => {
 
       {/* Content */}
       <DoublePressable onDoublePress={toggleLike}>
-        <Image
-          source={{
-            uri: post.image,
-          }}
-          style={styles.image}
-        />
+       {content}
       </DoublePressable>
 
       {/* Footer */}
