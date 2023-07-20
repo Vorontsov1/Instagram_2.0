@@ -46,7 +46,7 @@ export default StyleSheet.create({
   },
   text: {
     marginBottom: 2,
-    color: colors.black,
+    color: colors.white,
     lineHeight: 18,
   },
   boldText: {

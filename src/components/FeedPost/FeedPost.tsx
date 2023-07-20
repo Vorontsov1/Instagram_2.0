@@ -14,7 +14,7 @@ import DotsSvg from '../../assets/svg/three-dots-svgrepo-com.svg';
 import Like from '../../assets/svg/heart-like.svg';
 import Liked from '../../assets/svg/heart-liked.svg';
 import ChatIcon from '../../assets/svg/chat-dots-svgrepo-com.svg';
-import Send from '../../assets/svg/send-1-svgrepo-com.svg';
+import Send from '../../assets/svg/send-svgrepo-com.svg';
 import Bookmark from '../../assets/svg/bookmarks-svgrepo-com.svg';
 import styles from './styles';
 import Comment from '../Comment';
@@ -91,20 +91,20 @@ const FeedPost = ({post, isVisible   }: FeedPostProps) => {
           <View style={styles.threeIcons}>
             <Pressable onPress={toggleLike}>
               {isLiked ? (
-                <Liked width={30} height={30} style={styles.icon} />
+                <Liked width={20} height={20} style={styles.icon} />
               ) : (
-                <Like width={30} height={30} style={styles.icon} />
+                <Like width={20} height={20} style={styles.icon} />
               )}
             </Pressable>
             <TouchableOpacity>
-              <ChatIcon width={30} height={30} style={styles.icon} />
+              <ChatIcon width={20} height={20} style={styles.icon} />
             </TouchableOpacity>
             <TouchableOpacity>
-              <Send width={30} height={30} style={styles.icon} />
+              <Send width={20} height={20} style={styles.icon} />
             </TouchableOpacity>
           </View>
           <TouchableOpacity style={{marginLeft: 'auto'}}>
-            <Bookmark width={30} height={30} />
+            <Bookmark width={20} height={20} />
           </TouchableOpacity>
         </View>
 

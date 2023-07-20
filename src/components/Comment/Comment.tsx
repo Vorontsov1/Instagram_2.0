@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     fontWeight: font.weight.bold,
   },
   commetnText: {
-    color: colors.black,
+    color: colors.white,
     lineHeight: 18,
   },
   icon: {
