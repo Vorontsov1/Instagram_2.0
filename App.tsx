@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, FlatList, SafeAreaView } from 'react-native';
 import HomeScreen from './src/screens/HomeScreen/HomeScreen';
 import CommentsScreen from './src/screens/CommentScreen';
 import ProfileScreen from './src/screens/ProfileScreen/ProfileScreen';
+import EditProfielScreen from './src/screens/EditProfileScreen/EditProfileScreen';
 
 
 const App = () => {
@@ -10,7 +11,8 @@ const App = () => {
     <SafeAreaView style={ styles.app }>
       {/* <HomeScreen /> */}
       {/* <CommentsScreen /> */ }
-      <ProfileScreen />
+      {/* <ProfileScreen /> */ }
+      <EditProfielScreen />
     </SafeAreaView>
   );
 }
