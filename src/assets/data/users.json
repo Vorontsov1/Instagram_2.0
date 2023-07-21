@@ -1,0 +1,26 @@
+[
+  {
+    "id": "u1",
+    "image": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "username": "vadimnotjustdev",
+    "name": "Vadim"
+  },
+  {
+    "id": "u2",
+    "image": "https://images.unsplash.com/photo-1509868918748-a554ad25f858?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "username": "user 1",
+    "name": "Jon"
+  },
+  {
+    "id": "u3",
+    "image": "https://images.unsplash.com/photo-1519362909365-f8591adb630e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "username": "user 2",
+    "name": "Melisa"
+  },
+  {
+    "id": "u4",
+    "image": "https://images.unsplash.com/photo-1502323703385-c3ea9ace787d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "username": "user 3",
+    "name": "Dana"
+  }
+]
