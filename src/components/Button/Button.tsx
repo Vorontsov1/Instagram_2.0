@@ -1,4 +1,4 @@
-import { Pressable, Text, StyleSheet } from 'react-native';
+import { Pressable, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import colors from '../../theme/colors.ts';
 import fonts from '../../theme/fonts.ts';
 
@@ -9,9 +9,9 @@ interface IButton {
 
 const Button = ({text = '', onPress = () => {}}: IButton) => {
   return (
-    <Pressable onPress={onPress} style={styles.container}>
+    <TouchableOpacity onPress={onPress} style={styles.container}>
       <Text style={styles.text}>{text }</Text>
-    </Pressable>
+    </TouchableOpacity>
   );
 };
 
