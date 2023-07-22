@@ -26,34 +26,110 @@ interface ICustomInput {
   rules?: object;
 }
 
-const CustomInput = ({label}) => (
-  <View style={styles.inputContainer}>
-    <Text style={styles.label}>{label}</Text>
-    <View style={styles.inputWithUnderline}>
-      <TextInput
-        style={styles.input}
-        placeholder={label}
-        placeholderTextColor={colors.grey}
-      />
-    </View>
-  </View>
+const CustomInput = ({
+  label,
+  control,
+  multiline,
+    name = false,
+  rules = {},
+}: ICustomInput) => (
+  <Controller
+    control={control}
+        name={ name }
+        rules={ rules}
+        render={ ({ field: { onChange, value, onBlur }, fieldState: {error} }) => {
+    
+
+      return (
+        <View style={styles.inputContainer}>
+          <Text style={styles.label}>{label}</Text>
+          <View style={styles.inputWithUnderline}>
+            <TextInput
+              style={[
+                styles.input,
+                {
+                  borderBottomWidth: 1,
+                  borderBottomColor: error ? colors.error : colors.grey,
+                },
+              ]}
+              placeholder={label}
+              placeholderTextColor={colors.grey}
+              multiline={multiline}
+              onChangeText={text => onChange(text)}
+              onBlur={onBlur}
+              value={value}
+            />
+            {error && <Text style={{color: colors.error}}>{error.message || "Error"}</Text>}
+          </View>
+        </View>
+      );
+    }}
+  />
 );
 
-
 const EditProfileScreen = () => {
-const onSubmit = () => console.log('Submit');
+    const { control, handleSubmit, formState: { errors } } = useForm<IEditableUser>({
+        defaultValues: {
+            name: user.name,
+            username: user.username,
+            website: user.website,
+            bio: user.bio,
+        }
+    });
 
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+    
+     const URL_REGEX =
+       /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
+    
+    
   return (
     <View style={styles.page}>
       <Image source={{uri: user.image}} style={styles.avatar} />
       <Text style={styles.textButton}>Change profile photo</Text>
-      <CustomInput label="Name" />
-      <CustomInput label="Username" />
-      <CustomInput label="Pronounce" />
-      <CustomInput label="Website" />
-      <CustomInput label="Bio" multiline />
+      <CustomInput
+        name="name"
+        control={control}
+        rules={{required: 'Name is required'}}
+        label="Name"
+      />
+      <CustomInput
+        name="username"
+        control={control}
+        rules={{
+          required: 'Username is required',
+          minLength: {
+            value: 3,
+            message: 'Username must be at least 5 characters long',
+          },
+        }}
+        label="Username"
+      />
+      <CustomInput
+        name="website"
+        control={control}
+        rules={{
+          required: 'Website is required',
+          pattern: {value: URL_REGEX, message: 'Invalid URL'},
+        }}
+        label="Website"
+      />
+      <CustomInput
+        name="bio"
+        control={control}
+              rules={{
+                  maxLength: {
+                      value: 200,
+                      message: 'Bio must be at most 200 characters long',
+                  },
+              }}
+        label="Bio"
+        multiline
+      />
 
-      <Text onPress={onSubmit} style={styles.textButton}>
+      <Text onPress={handleSubmit(onSubmit)} style={styles.textButton}>
         Submit
       </Text>
     </View>
@@ -89,16 +165,14 @@ const styles = StyleSheet.create({
     color: colors.white,
   },
   inputWithUnderline: {
-    borderBottomWidth: 1,
-    borderColor: colors.grey,
-    flex: 1,
+      flex: 1,
   },
   input: {
     padding: 5,
     color: colors.white,
   },
   textButton: {
-    color: colors.primary,
+    color: colors.accent,
     fontSize: fonts.size.md,
     fontWeight: fonts.weight.semi,
     marginTop: 10,
