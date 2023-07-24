@@ -1,5 +1,5 @@
 import  { useRef, useState } from 'react';
-import {FlatList, ViewabilityConfig, ViewToken} from 'react-native';
+import {FlatList, ViewabilityConfig, ViewToken, StyleSheet} from 'react-native';
 import FeedPost from '../../components/FeedPost';
 import posts from '../../assets/data/posts';
 
@@ -21,6 +21,7 @@ const HomeScreen = () => {
 
   return (
     <FlatList
+      style={{backgroundColor: 'black'}}
       data={posts}
       renderItem={({item}) => <FeedPost post={item} isVisible={activePostId === item.id } />}
       keyExtractor={item => item.id}

@@ -7,7 +7,7 @@ import ProfileHeader from './ProfielHeader';
 const ProfileScreen = () => {
     return <FeedGridView
       data={ user.posts }
-      ListHeaderComponent={ProfileHeader}
+      ListHeaderComponent={ ProfileHeader }
   />;
 };
 

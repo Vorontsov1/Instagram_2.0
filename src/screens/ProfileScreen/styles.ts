@@ -6,6 +6,7 @@ import colors from '../../theme/colors';
 export default styles = StyleSheet.create({
   root: {
     padding: 10,
+    backgroundColor: colors.black,
   },
   headerRow: {
     flexDirection: 'row',
