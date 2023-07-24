@@ -6,7 +6,7 @@ import CommentScreen from '../screens/CommentScreen';
 import ProfileScreen from '../screens/ProfileScreen/ProfileScreen';
 import EditProfielScreen from '../screens/EditProfileScreen/EditProfileScreen';
 import PostUploadScreen from '../screens/PostUploadScreen';
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/instalogo.png';
 
 
 
@@ -22,14 +22,15 @@ const Navigation = () => {
             name="Feed"
             component={HomeScreen}
             options={{
-            headerShown: false,
+              headerTitle: HeaderTitle,
+              headerStyle: {backgroundColor: 'black', headerShown: false},
             }}
           />
 
           <Stack.Screen
             name="UserProfile"
             component={ProfileScreen}
-            options={{title: 'Profile'}}
+            options={{title: 'Profile', headerShown: false}}
           />
         </Stack.Navigator>
       </NavigationContainer>
@@ -37,5 +38,11 @@ const Navigation = () => {
 };
 
 
+
+const HeaderTitle = () => {
+    return (
+        <Image source={ logo } style={ { width: 100, height: 30 }} resizeMode='containt' />
+    )
+ }
 
 export default Navigation;

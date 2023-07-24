@@ -1,11 +1,12 @@
 import  { useRef, useState } from 'react';
-import {FlatList, ViewabilityConfig, ViewToken, StyleSheet} from 'react-native';
+import { FlatList, ViewabilityConfig, ViewToken, StyleSheet } from 'react-native';
 import FeedPost from '../../components/FeedPost';
 import posts from '../../assets/data/posts';
 
 const HomeScreen = () => {
   const [activePostId, setActivePostId] = useState<string | null>(null);
-
+  
+ 
 
  const viewabilityConfig: ViewabilityConfig = {
    itemVisiblePercentThreshold: 51,

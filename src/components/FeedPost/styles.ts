@@ -28,7 +28,7 @@ export default StyleSheet.create({
   dotSvg: {},
   userName: {
     fontWeight: font.weight.bold,
-    color: colors.black,
+    color: colors.white,
     marginRight: 10,
   },
   svgContainer: {

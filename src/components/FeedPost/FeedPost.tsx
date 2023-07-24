@@ -22,6 +22,8 @@ import { IPost } from '../../types/models.ts';
 import DoublePressable from '../DoublePressable';
 import Carousel from '../Carousel';
 import VideoPlayer from '../VideoPlayer';
+import {useNavigation} from '@react-navigation/native';
+
 
 
 
@@ -34,6 +36,8 @@ interface FeedPostProps {
 const FeedPost = ({post, isVisible   }: FeedPostProps) => {
   const [isLiked, setIsLiked] = useState(false);
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
+  const navigation = useNavigation();
+
 
   const toggleDescriptionExpanded = () => {
     setIsDescriptionExpanded(v => !v); //make it to true
@@ -42,6 +46,11 @@ const FeedPost = ({post, isVisible   }: FeedPostProps) => {
   const toggleLike = () => {
     setIsLiked(v => !v); //make it to true
   };
+  const navigateToUser = () => { 
+    navigation.navigate('UserProfile', {userId: post.user.id});
+  };
+
+
 
   let content = null;
   if (post.image) {
@@ -74,14 +83,13 @@ const FeedPost = ({post, isVisible   }: FeedPostProps) => {
             }}
             style={styles.avatar}
           />
-          <Text style={styles.userName}>{post.user.username}</Text>
+          <Text onPress={navigateToUser} style={styles.userName}>{post.user.username}</Text>
         </View>
-
         <TouchableOpacity>
           <DotsSvg width={20} height={20} style={styles.dotSvg} />
         </TouchableOpacity>
       </View>
-
+    
       {/* Content */}
       <DoublePressable onDoublePress={toggleLike}>{content}</DoublePressable>
 
