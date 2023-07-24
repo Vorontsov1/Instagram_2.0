@@ -1,6 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import {View, Text, Image} from 'react-native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import BottomTabNav from './BottomTabNav';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
 import CommentScreen from '../screens/CommentScreen';
 import ProfileScreen from '../screens/ProfileScreen/ProfileScreen';
@@ -17,16 +18,15 @@ const Stack = createNativeStackNavigator();
 const Navigation = () => {
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Feed">
+        <Stack.Navigator initialRouteName="Home">
           <Stack.Screen
-            name="Feed"
-            component={HomeScreen}
+            name="Home"
+            component={BottomTabNav}
             options={{
-              headerTitle: HeaderTitle,
+              headerTitle: () => <HeaderTitle />,
               headerStyle: {backgroundColor: 'black', headerShown: false},
             }}
           />
-
           <Stack.Screen
             name="UserProfile"
             component={ProfileScreen}
@@ -37,12 +37,16 @@ const Navigation = () => {
     );
 };
 
-
-
 const HeaderTitle = () => {
-    return (
-        <Image source={ logo } style={ { width: 100, height: 30 }} resizeMode='containt' />
-    )
- }
+  return (
+    <Image
+      source={logo}
+      style={{width: 100, height: 30}}
+      resizeMode="contain"
+    />
+  );
+};
+
+
 
 export default Navigation;

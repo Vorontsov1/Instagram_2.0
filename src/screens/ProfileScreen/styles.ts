@@ -11,7 +11,7 @@ export default styles = StyleSheet.create({
   headerRow: {
     flexDirection: 'row',
     alignItems: 'center',
-      justifyContent: 'space-between',
+    justifyContent: 'space-between',
     marginVertical: 10,
   },
   avatar: {
@@ -25,7 +25,6 @@ export default styles = StyleSheet.create({
   },
   numberText: {
     color: colors.white,
-    fontSize: fonts.size.md,
     fontWeight: fonts.weight.full,
   },
   textPost: {
